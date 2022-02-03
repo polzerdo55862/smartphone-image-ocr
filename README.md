@@ -27,3 +27,4 @@ Once you done this, you will see a "token_......pickle" file created, which will
 * https://www.youtube.com/watch?v=dkxcd2Q3Qwo
 * https://developers.google.com/people/quickstart/python
 * https://console.developers.google.com/
+* https://learndataanalysis.org/getting-started-with-google-photos-api-and-python-part-1/
