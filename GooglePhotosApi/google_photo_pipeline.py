@@ -1,13 +1,21 @@
-#import pandas as pd
-import google_photos_api
+import pandas as pd
+from google_photos_api import GooglePhotosApi
 
-CLIENT_SECRET_FILE = r'credentials/client_secret_python_workflow.json'
-API_NAME = 'photoslibrary'
-API_VERSION = 'v1'
-SCOPES = ['https://www.googleapis.com/auth/photoslibrary']
+# CLIENT_SECRET_FILE = r'../credentials/client_secret_python_workflow.json'
+# API_NAME = 'photoslibrary'
+# API_VERSION = 'v1'
+# SCOPES = ['https://www.googleapis.com/auth/photoslibrary']
+#
+# # service = google_photos_api.create_service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
+# # print("service:" + service)
 
-service = google_photos_api.create_service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
-print("service:" + service)
+google_photos_api = GooglePhotosApi()
+service = google_photos_api.create_service()
+# my_albums = service.albums().list().execute()
+# my_albums_list = my_albums.get('albums')
+media_items = service.mediaItems().search().execute()
+df = pd.DataFrame(media_items)
+pass
 #
 # """
 # list method
